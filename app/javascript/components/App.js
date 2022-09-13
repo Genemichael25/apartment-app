@@ -21,9 +21,9 @@ class App extends Component {
       apartments: [],
   }
 }
+
  componentDidMount() {
     this.readApartment()
-    console.log(this.state)
   }
 
   readApartment = () => {
@@ -45,7 +45,8 @@ class App extends Component {
     .then(() => this.readApartment())
     .catch(errors => console.log("New Apartment Error", errors))
   }
-    updateApartment = (editapartment, id) => {
+  
+  updateApartment = (editapartment, id) => {
       fetch(`/apartments/${id}`, {
         body: JSON.stringify(editapartment),
         method: 'PUT',
@@ -66,6 +67,7 @@ class App extends Component {
         })
       })
       .catch(error => console.log(error))
+    }
 
   render() {
     const {
@@ -75,7 +77,7 @@ class App extends Component {
       sign_in_route,
       sign_out_route
     } = this.props
-    console.log(this.state.apartments)
+
     return (
       <Router>
         <Header {...this.props} />
@@ -85,7 +87,11 @@ class App extends Component {
           <Route path="/mylistings" render={(props) => {
             let myListings = this.state.apartments.filter(apartment => apartment.user_id === current_user.id)
             return (<ProtectedApartmentIndex apartments={myListings}/>)}}/>
-          <Route path="/apartmentshow" component={ApartmentShow} />
+          <Route path="/apartmentshow/:id" render={(props) => {
+            let id = +props.match.params.id
+            let apartment = this.state.apartments.find(apartment => apartment.id === id)
+            return <ApartmentShow {...props} apartment={apartment}/>
+          }} />
           <Route path ='/apartmentnew' render={() => <ApartmentNew createApartment={this.createApartment} current_user = {this.props.current_user}/>
             }/>
           <Route path="/apartmentedit/:id" render={(props) => {
@@ -96,6 +102,7 @@ class App extends Component {
           } />
           <Route component={NotFound}/>
         </Switch>
+        <Footer />
       </Router>
     )
   }
