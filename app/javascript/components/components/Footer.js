@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export default class Footer extends Component {
   render() {
     return (
-      <h3>Copyright symbol NLG 2022</h3>
+      <div className='footer'>©LEARN Academy 2022 | Delta NLG</div>
     )
   }
 }
