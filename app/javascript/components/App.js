@@ -86,7 +86,7 @@ class App extends Component {
           <Route path="/apartmentindex" render = {(props) => <ApartmentIndex {...props} apartments={this.state.apartments} />}/>
           <Route path="/mylistings" render={(props) => {
             let myListings = this.state.apartments.filter(apartment => apartment.user_id === current_user.id)
-            return (<ProtectedApartmentIndex apartments={myListings}/>)}}/>
+            return (<ProtectedApartmentIndex {...props} apartments={myListings}/>)}}/>
           <Route path="/apartmentshow/:id" render={(props) => {
             let id = +props.match.params.id
             let apartment = this.state.apartments.find(apartment => apartment.id === id)

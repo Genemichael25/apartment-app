@@ -6,22 +6,24 @@ class ProtectedApartmentIndex extends Component {
     const {
         logged_in,
         current_user,
+        apartments
     } = this.props
     console.log("logged_in:", logged_in)
     console.log("current_user:", current_user)
     console.log(this.props.apartments)
     return (
       <>
-        <h1>My Listings</h1>
+        <div className='background'>
+        <h2>My Listings</h2>
         <div className='myuserlistings'>
             <Row sm='3'>
             {apartments && apartments.map(apartment => {
                 return(
-                <Card key={apartment.id}>
-                    <CardImg alt='apartment image' src= {apartment.id} top width="100%"></CardImg>
+                <Card key={apartment.id} className="info-card">
+                    <CardImg alt='apartment image' src= {apartment.image} top width="100%"></CardImg>
                     <CardBody>
                         <CardTitle>
-                            {apartment.price} / month
+                            <strong>{apartment.price} / month</strong>
                         </CardTitle>
                         <CardSubtitle>
                             {apartment.street}, {apartment.city}, {apartment.state}
@@ -36,6 +38,7 @@ class ProtectedApartmentIndex extends Component {
                 </Card>)
             })}
             </Row>
+        </div>
         </div>
       </>
     )

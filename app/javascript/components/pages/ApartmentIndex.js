@@ -7,6 +7,7 @@ export default class ApartmentIndex extends Component {
   render() {
     return (
       <>
+      <div className='background'>
       <Container className='indexText'>
         <h2>Recent Listings</h2>
       </Container>
@@ -16,11 +17,11 @@ export default class ApartmentIndex extends Component {
           {this.props.apartments && this.props.apartments.map((apartment, index) => {
             return (
               <Col key={index} sm='4' md='4' lg='4'>
-                <Card className='card'>
+                <Card className='info-card'>
                   <CardImg top width='100%' src={apartment.image} alt='Card image cap' />
                     <CardBody>
                       <CardTitle>
-                        {apartment.price} /month
+                        <strong>{apartment.price} /month</strong>
                       </CardTitle>
                       <CardText>
                         {apartment.street} {apartment.city}, {apartment.state}
@@ -28,7 +29,7 @@ export default class ApartmentIndex extends Component {
                         {apartment.bedrooms} bedrooms, {apartment.bathrooms} bath
                       </CardText>
                     </CardBody>
-                      <Button color='none'>
+                      <Button className='button'>
                         <NavLink to={`/apartmentshow/${apartment.id}`}>More Details</NavLink>
                       </Button>
                 </Card>
@@ -38,6 +39,7 @@ export default class ApartmentIndex extends Component {
           )}
         </CardGroup>
       </Container>
+      </div>
       </>
     )
   }

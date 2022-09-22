@@ -36,106 +36,125 @@ export default class ApartmentNew extends Component {
   render() {
     return (
       <>
-        <h3>ApartmentNew</h3>
-        <Form>
-          <FormGroup>
-            <Label for="street">street</Label>
+        <div className='background'>
+        <h2>New Listing</h2>
+        <Form style={{backgroundColor:"#EAE2D4", padding:"25px",margin:"25px"}}>
+          <div className='groups'>
+          <FormGroup className='fields'>
+            <Label for="street">Street:</Label>
             <Input
+              className='input'
               type="text"
               name="street"
               onChange={this.handleChange}
               value={this.state.newApartment.street}
             />
           </FormGroup>
-          <FormGroup>
-            <Label for="city">city</Label>
+          <FormGroup className='fields'>
+            <Label for="city">City:</Label>
             <Input
+              className='input'
               type="text"
               name="city"
               onChange={this.handleChange}
               value={this.state.newApartment.city}
             />
           </FormGroup> 
-          <FormGroup>
-            <Label for="state">state</Label>
+          <FormGroup className='fields'>
+            <Label for="state">State:</Label>
             <Input
+              className='inputshort'
               type="text"
               name="state"
               onChange={this.handleChange}
               value={this.state.newApartment.state}
-            />
+              />
           </FormGroup>
-          <FormGroup>
-            <Label for="manager">manager</Label>
+          </div>
+          <div className='groups'>
+          <FormGroup className='fields'>
+            <Label for="price">Price:</Label>
             <Input
-              type="text"
-              name="manager"
-              onChange={this.handleChange}
-              value={this.state.newApartment.manager}
-            />
-          </FormGroup>
-          <FormGroup>
-            <Label for="email">email</Label>
-            <Input
-              type="text"
-              name="email"
-              onChange={this.handleChange}
-              value={this.state.newApartment.email}
-            />
-          </FormGroup>
-          <FormGroup>
-            <Label for="price">price</Label>
-            <Input
+              className='input'
               type="text"
               name="price"
               onChange={this.handleChange}
               value={this.state.newApartment.price}
             />
           </FormGroup>
-          <FormGroup>
-            <Label for="bedrooms">bedrooms</Label>
+          <FormGroup className='fields'>
+            <Label for="bedrooms">Bedrooms:</Label>
             <Input
+              className='inputshort'
               type="text"
               name="bedrooms"
               onChange={this.handleChange}
               value={this.state.newApartment.bedrooms}
-            />
+              />
           </FormGroup>
-          <FormGroup>
-            <Label for="bathrooms">bathrooms</Label>
+          <FormGroup className='fields'>
+            <Label for="bathrooms">Bathrooms:</Label>
             <Input
+              className='inputshort'
               type="text"
               name="bathrooms"
               onChange={this.handleChange}
               value={this.state.newApartment.bathrooms}
-            />
+              />
           </FormGroup>
-          <FormGroup>
-            <Label for="pets">pets</Label>
+          </div>
+          <div className='groups'>
+          <FormGroup className='fields'>
+            <Label for="pets">Pets:</Label>
             <Input
+              className='input'
               type="text"
               name="pets"
               onChange={this.handleChange}
               value={this.state.newApartment.pets}
             />
           </FormGroup>
-          <FormGroup>
-            <Label for="image">image</Label>
+          <FormGroup className='fields'>
+            <Label for="image">Image:</Label>
             <Input
+              className='input'
               type="text"
               name="image"
               onChange={this.handleChange}
               value={this.state.newApartment.image}
             />
           </FormGroup>
-          
+          </div>
+          <div className='groups'>
+          <FormGroup className='fields'>
+            <Label for="manager">Manager:</Label>
+            <Input
+              className='input'
+              type="text"
+              name="manager"
+              onChange={this.handleChange}
+              value={this.state.newApartment.manager}
+            />
+          </FormGroup>
+          <FormGroup className='fields'>
+            <Label for="email">Email:</Label>
+            <Input
+              className='input'
+              type="text"
+              name="email"
+              onChange={this.handleChange}
+              value={this.state.newApartment.email}
+            />
+          </FormGroup>
+          </div>
           <Button 
+            className='button'
             name="submit" 
             onClick={this.handleSubmit}>
-            Create new apartment
+            Submit
           </Button>
-
         </Form>
+        </div>
       </>
     )
   }

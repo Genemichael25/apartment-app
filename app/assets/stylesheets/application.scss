@@ -52,10 +52,10 @@
     justify-content: space-around;
     flex-wrap: wrap;
     align-content: center;
-    text-align: center;
+    text-align: left;
     margin: 3rem;
-    height: 110vh;
-    color: white; 
+    height: auto;
+    background-color: #EAE2D4; 
   }
 
   .info-title {
@@ -64,7 +64,7 @@
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    align-content: center; 
+    text-align: left;
   }
 
   .return-button {
@@ -116,4 +116,44 @@
 .home-buttons {
   background-color: #A19581;
   margin: 20px;
+}
+
+h2 {
+  text-align: center;
+  color: white;
+}
+
+.background {
+  background-color: #A19581;
+}
+
+.card {
+  margin: 25px;
+}
+
+.button {
+  width: 50%;
+  align-self: center;
+  background-color: #584E4D;
+}
+
+.input {
+  width: 250px;
+  padding-left: 25px;
+}
+
+.inputshort {
+  width: 100px;
+  padding-left: 15px;
+}
+
+.fields {
+  display: flex;
+  flex-direction: row;
+  margin-left: 15px;
+}
+
+.groups {
+  display: flex;
+  flex-direction: row;
 }

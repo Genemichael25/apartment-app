@@ -42,12 +42,17 @@ class Header extends Component {
         <Nav className='header-links'>
           {logged_in &&
             <NavItem>
-              <a href={`/users/${current_user.id}`} className="nav-link">My Apartments</a>
+              <a href="/apartmentindex" className="nav-link">View Listings</a>
             </NavItem>
           }
           {logged_in &&
             <NavItem>
-              <a href="/apartmentnew" className="nav-link">Add Apartment</a>
+              <a href={`/mylistings`} className="nav-link">My Listings</a>
+            </NavItem>
+          }
+          {logged_in &&
+            <NavItem>
+              <a href="/apartmentnew" className="nav-link">Create Listing</a>
             </NavItem>
           }
           {logged_in &&
