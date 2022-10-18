@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Card, CardBody, CardTitle, CardSubtitle, Row, Button, CardImg} from 'reactstrap'
+import { NavLink } from 'react-router-dom'
 
 class ProtectedApartmentIndex extends Component {
   render() {
@@ -32,7 +33,7 @@ class ProtectedApartmentIndex extends Component {
                             {apartment.bedrooms} Bedroom, {apartment.bathrooms} Bath
                         </CardSubtitle>
                         <Button>
-                            More Details
+                            <NavLink to={`/apartmentedit/${apartment.id}`}>Edit</NavLink>
                         </Button>
                     </CardBody>
                 </Card>)

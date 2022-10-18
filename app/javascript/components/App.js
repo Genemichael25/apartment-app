@@ -82,24 +82,26 @@ class App extends Component {
       <Router>
         <Header {...this.props} />
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" component={Home} {...this.props}/>
           <Route path="/apartmentindex" render = {(props) => <ApartmentIndex {...props} apartments={this.state.apartments} />}/>
           <Route path="/mylistings" render={(props) => {
-            let myListings = this.state.apartments.filter(apartment => apartment.user_id === current_user.id)
-            return (<ProtectedApartmentIndex {...props} apartments={myListings}/>)}}/>
+            let myListings = this.state.apartments.filter(
+              apartment => apartment.user_id === current_user.id)
+            return (<ProtectedApartmentIndex {...this.props} apartments={myListings}/>)}}/>
           <Route path="/apartmentshow/:id" render={(props) => {
             let id = +props.match.params.id
-            let apartment = this.state.apartments.find(apartment => apartment.id === id)
+            let apartment = this.state.apartments.find(
+              apartment => apartment.id === id)
             return <ApartmentShow {...props} apartment={apartment}/>
           }} />
           <Route path ='/apartmentnew' render={() => <ApartmentNew createApartment={this.createApartment} current_user = {this.props.current_user}/>
             }/>
           <Route path="/apartmentedit/:id" render={(props) => {
             let id = +props.match.params.id
-            let apartment = this.state.apartments.find(apartment => apartment.id === id)
-            return <ApartmentEdit {...props} apartment={apartment} />
-          }
-          } />
+            let apartment = this.state.apartments.find(
+              apartment => apartment.id === id)
+            return <ApartmentEdit apartment={apartment} updateApartment={this.updateApartment}/>
+          }} />
           <Route component={NotFound}/>
         </Switch>
         <Footer />

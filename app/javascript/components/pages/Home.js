@@ -1,9 +1,18 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 import { Button } from 'reactstrap'
 
 class Home extends Component {
  
   render() {
+    const {
+      logged_in,
+      current_user,
+      new_user_route,
+      sign_in_route
+    } = this.props
+
+    console.log(sign_in_route)
     return (
       <>
         <div className='home-container'>
@@ -17,9 +26,13 @@ class Home extends Component {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non accumsan cursus tristique parturient faucibus cras non amet lectus. Placerat netus viverra tincidunt sed enim varius volutpat sed. Commodo arcu mauris nisl malesuada tincidunt enim. Amet, mauris scelerisque morbi penatibus sodales scelerisque sed. Adipiscing purus aliquam dui mi, sit dui lorem sit mattis. Consequat nunc congue arcu tempor ut iaculis risus nunc consectetur.
             </div>
             <div >
-              <Button className="home-buttons">
+            <NavLink to={"/users/sign_in"}>
+              <Button className="home-buttons" >
+    
                 Sign-In
+              
               </Button>
+            </NavLink>
               <Button className="home-buttons">
                 Sign-Up
               </Button>

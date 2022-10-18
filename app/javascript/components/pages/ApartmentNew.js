@@ -117,7 +117,7 @@ export default class ApartmentNew extends Component {
           <FormGroup className='fields'>
             <Label for="image">Image:</Label>
             <Input
-              className='input'
+              className='inputlong'
               type="text"
               name="image"
               onChange={this.handleChange}
@@ -139,7 +139,7 @@ export default class ApartmentNew extends Component {
           <FormGroup className='fields'>
             <Label for="email">Email:</Label>
             <Input
-              className='input'
+              className='inputlong'
               type="text"
               name="email"
               onChange={this.handleChange}
