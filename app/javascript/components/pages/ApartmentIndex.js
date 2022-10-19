@@ -18,15 +18,19 @@ export default class ApartmentIndex extends Component {
             return (
               <Col key={index} sm='4' md='4' lg='4'>
                 <Card className='info-card'>
-                  <CardImg top width='100%' src={apartment.image} alt='Card image cap' />
+                  <div className='imageborder'>
+                  <CardImg top width='80%' height={"200px"} src={apartment.image} alt='Card image cap' />
+                  </div>
                     <CardBody>
                       <CardTitle>
                         <strong>{apartment.price} /month</strong>
                       </CardTitle>
                       <CardText>
-                        {apartment.street} {apartment.city}, {apartment.state}
+                        {apartment.street} 
                         <br/>
-                        {apartment.bedrooms} bedrooms, {apartment.bathrooms} bath
+                        {apartment.city}, {apartment.state}
+                        <br/>
+                        {apartment.bedrooms} Bedrooms, {apartment.bathrooms} Bath
                       </CardText>
                     </CardBody>
                       <Button className='button'>

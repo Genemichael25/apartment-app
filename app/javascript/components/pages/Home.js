@@ -17,7 +17,7 @@ class Home extends Component {
       <>
         <div className='home-container'>
           <img src='https://www.ronenbekerman.com/wp-content/uploads/2019/03/d2a2adfb3fb77c7fbafb04eaa4a7dd36-1920x1080.jpg'
-            style={{width:"100vh",height:"auto"}}/>
+            style={{width:"100vw",height:"auto"}}/>
           <div className="home-text">
             <div >
               Welcome
