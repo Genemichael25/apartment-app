@@ -1,9 +1,3 @@
-// link to home
-// link to all apartments
-// link to my apartments
-// link to add apartment
-
-
 import React, { Component } from 'react'
 import { Nav, NavItem } from 'reactstrap'
 
@@ -16,8 +10,7 @@ class Header extends Component {
       sign_in_route,
       sign_out_route
     } = this.props
-    console.log("logged_in:", logged_in)
-    console.log("current_user:", current_user)
+    
     return (
       <>
         <Nav className='header-links'>

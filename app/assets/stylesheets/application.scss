@@ -121,6 +121,7 @@
 h2 {
   text-align: center;
   color: white;
+  padding-top: 25px;
 }
 
 .background {
@@ -139,16 +140,17 @@ h2 {
 
 .input {
   width: 250px;
-  padding-left: 25px;
+  margin-left: 15px;
 }
 
 .inputlong {
   width: 450px;
+  margin-left: 15px;
 }
 
 .inputshort {
   width: 100px;
-  padding-left: 15px;
+  margin-left: 15px;
 }
 
 .fields {
