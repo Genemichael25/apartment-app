@@ -32,8 +32,8 @@ class ProtectedApartmentIndex extends Component {
                         <CardSubtitle>
                             {apartment.bedrooms} Bedroom, {apartment.bathrooms} Bath
                         </CardSubtitle>
-                        <Button>
-                            <NavLink to={`/apartmentedit/${apartment.id}`}>Edit</NavLink>
+                        <Button className='button'>
+                            <NavLink to={`/apartmentshow/${apartment.id}`}>More Details</NavLink>
                         </Button>
                     </CardBody>
                 </Card>)

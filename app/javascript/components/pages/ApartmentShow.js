@@ -22,6 +22,18 @@ class ApartmentShow extends Component {
   }
   render() {
     let { apartment } = this.props
+
+    const {
+      logged_in,
+      current_user,
+      new_user_route,
+      sign_in_route,
+      sign_out_route
+    } = this.props
+
+    console.log(logged_in)
+    console.log(apartment?.user_id)
+    console.log(current_user?.id)
     return (
       <>
         <div className='background'>
@@ -45,6 +57,13 @@ class ApartmentShow extends Component {
                     <p>Manager: { apartment?.manager }</p>
                     <p>Email: { apartment?.email }</p>
                   </div>
+                  {(logged_in && current_user?.id === apartment?.user_id) && 
+                  <>
+                  <Button className='button'><NavLink to={`/apartmentedit/${apartment?.id}`}>Edit Listing</NavLink> </Button>
+                  <Button className='button'><NavLink to="">Delete Listing</NavLink> </Button>
+                  </>
+                  }
+                  
                 </CardBody>
               </Card>
             </Col>

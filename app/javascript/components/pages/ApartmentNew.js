@@ -38,7 +38,7 @@ export default class ApartmentNew extends Component {
       <>
         <div className='background'>
         <h2>New Listing</h2>
-        <Form style={{backgroundColor:"#EAE2D4", padding:"25px",margin:"25px"}}>
+        <Form style={{backgroundColor:"#EAE2D4", padding:"25px", width: "85vw", marginLeft:"auto", marginRight:"auto"}}>
           <div className='groups'>
           <FormGroup className='fields'>
             <Label for="street">Street:</Label>

@@ -82,7 +82,7 @@ class App extends Component {
       <Router>
         <Header {...this.props} />
         <Switch>
-          <Route exact path="/" component={Home} {...this.props}/>
+          <Route exact path="/" render={(props) => <Home {...this.props}/>}/>
           <Route path="/apartmentindex" render = {(props) => <ApartmentIndex {...props} apartments={this.state.apartments} />}/>
           <Route path="/mylistings" render={(props) => {
             let myListings = this.state.apartments.filter(
@@ -92,7 +92,7 @@ class App extends Component {
             let id = +props.match.params.id
             let apartment = this.state.apartments.find(
               apartment => apartment.id === id)
-            return <ApartmentShow {...props} apartment={apartment}/>
+            return (<ApartmentShow {...this.props} apartment={apartment}/>)
           }} />
           <Route path ='/apartmentnew' render={() => <ApartmentNew createApartment={this.createApartment} current_user = {this.props.current_user}/>
             }/>
